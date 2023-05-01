@@ -1,23 +1,19 @@
-#import os
-#import smtplib
-#from email.message import EmailMessage
-#from dotenv import load_dotenv
-#_ = load_dotenv()
+import smtplib
+from email.message import EmailMessage
 
+# set your email and password
+# please use App Password
+email_address = "spamnewsletterlol@gmail.com"
+email_password = "epplwoszjcmorxsb"
 
-def send_spam_email(to, subject, message):
+# create email
+msg = EmailMessage()
+msg['Subject'] = "Email subject"
+msg['From'] = email_address
+msg['To'] = "shoultfighter@gmail.com"
+msg.set_content("This is email message")
 
-    email_address = os.environ.get("EMAIL_ADDRESS")
-    email_password = os.environ.get("EMAIL_PASSWORD")
-
-    # create email
-    msg = EmailMessage()
-    msg['spam of the month lol'] = subject
-    msg['spamnewsletterlol@gmail.com'] = email_address
-    msg['violetta.98@gmail.com'] = to
-    msg.set_content(message)
-
-    # send email
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login(email_address, email_password)
-        smtp.send_message(msg)
+# send email
+with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+    smtp.login(email_address, email_password)
+    smtp.send_message(msg)
