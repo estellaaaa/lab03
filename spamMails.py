@@ -3,8 +3,8 @@ from email.message import EmailMessage
 
 # set your email and password
 # please use App Password
-email_address = "spamnewsletterlol@gmail.com"
-email_password = "epplwoszjcmorxsb"
+email_address = ""
+email_password = ""
 
 # create email
 msg = EmailMessage()
